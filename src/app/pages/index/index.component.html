@@ -1,0 +1,46 @@
+<div class="center-screen">
+  <p-card header="Entrar em uma sala">
+    <form [formGroup]="form" (submit)="handleFormSubmit($event)">
+      <div class="grid">
+        <div class="col field">
+          <label for="joinType">Selecione o tipo de entrada:</label>
+          <p-selectButton
+            [options]="connectionTypes"
+            optionLabel="label"
+            optionValue="value"
+            id="joinType"
+            formControlName="connectionType"/>
+        </div>
+      </div>
+      @if (!form.controls['connectionType'].value) {
+        <div class="grid">
+          <span class="col">Selecione o tipo de sala</span>
+        </div>
+      } @else {
+        @if (form.controls['connectionType'].value === '1') {
+          <div class="grid">
+            <div class="col field">
+              <label for="room">Id sala</label><br/>
+              <input type="password" class="w-full" pInputText id="room" formControlName="room" />
+            </div>
+          </div>
+        }
+        <div class="grid">
+          <div class="col field">
+            <label for="password">Senha</label><br/>
+            <input type="password" class="w-full" pInputText id="password" formControlName="password" />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="col">
+            <p-button [disabled]="disableSubmit"
+                      type="submit"
+                      styleClass="w-full flex justify-content-center"
+            >Entrar</p-button>
+          </div>
+        </div>
+      }
+    </form>
+  </p-card>
+</div>

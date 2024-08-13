@@ -1,0 +1,35 @@
+.ultimate-board {
+  display: grid;
+  --grid-size: 1fr;
+  grid-template-columns: var(--grid-size) var(--grid-size) var(--grid-size);
+  grid-template-rows: var(--grid-size) var(--grid-size) var(--grid-size);
+  gap: 2rem;
+  width: fit-content;
+}
+
+
+.active {
+  animation: 2s linear infinite selectedAnimation;
+}
+
+.winElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winElement span {
+  font-size: 4rem;
+}
+
+@keyframes selectedAnimation {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,9 @@
+<div class="board">
+  @for(element of elements; track i;let i = $index) {
+    <div class="element" (click)="handlePlayClick(i)">
+      @if(element !== null) {
+        <span>{{element | elementFormat}}</span>
+      }
+    </div>
+  }
+</div>

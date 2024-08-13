@@ -1,0 +1,11 @@
+<div class="ultimate-board">
+  @for(board of boards; track i; let i = $index) {
+    @if(winBoard[i] === null) {
+      <app-tictac [index]="board" [ngClass]="{'active': isPlayableBoard(i)}" />
+    } @else {
+      <div class="winElement">
+        <span>{{winBoard[i] | elementFormat}}</span>
+      </div>
+    }
+  }
+</div>

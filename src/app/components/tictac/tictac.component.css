@@ -1,0 +1,26 @@
+.board {
+  display: grid;
+  --grid-size: 3rem;
+  grid-template-columns: var(--grid-size) var(--grid-size) var(--grid-size);
+  grid-template-rows: var(--grid-size) var(--grid-size) var(--grid-size);
+  gap: 0.5rem;
+}
+
+.board:hover .element {
+
+  background-color: #e7e7e7;
+}
+
+.element {
+  background-color: #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  font-size: 1.5rem;
+}
+
+
+.element:hover {
+  background-color: #F5F5F5 !important;
+}

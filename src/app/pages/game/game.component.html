@@ -1,0 +1,13 @@
+<div class="center-screen">
+  <div class="game">
+    <p-card styleClass="flex justify-content-center align-items-center w-full">
+      <div class="flex flex-column w-full justify-content-center align-items-center">
+        <span>{{gameStatus}}</span>
+        <span>Você joga com as {{playerElement | elementFormat}}</span>
+      </div>
+    </p-card>
+    @if(canPlay) {
+      <app-utimate-tictac />
+    }
+  </div>
+</div>
